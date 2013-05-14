@@ -37,14 +37,14 @@ namespace SitemapParse.Controllers
         }
 
 
-        public ActionResult Create(string url)
+        public ActionResult Create(string url, string name)
         {
             //
-            GetLinks_FromURL(url);
+            GetLinks_FromURL(url, name);
             return View("Parse");
         }
 
-        public void GetLinks_FromURL(string url)
+        public void GetLinks_FromURL(string url, string name)
         {
             try
             {
@@ -70,9 +70,9 @@ namespace SitemapParse.Controllers
                 }
 
                 //writer for the stc file
-                StreamWriter swSTC = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +  @"\Selenium Files\" + _month + "-" + _day + "-" + _year + ".stc");
+                StreamWriter swSTC = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Selenium Files\" + name + "-" + _month + "-" + _day + "-" + _year + ".stc");
                 //writer for the text file for the preview
-                StreamWriter swTXT = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Selenium Files\" + _month + "-" + _day + "-" + _year + ".txt");
+                StreamWriter swTXT = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Selenium Files\" + name + "-" + _month + "-" + _day + "-" + _year + ".txt");
 
                 //write stc file
                 using (swSTC)
