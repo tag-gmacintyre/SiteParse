@@ -66,13 +66,13 @@ namespace SitemapParse.Controllers
                     //add the value to the string for the html scaffolding
                     //following selenium syntax
                     HtmlAttribute att = link.Attributes["href"];
-                    output += "\r\n<tr>\r\n\t<td>open</td>"
-                                       + "\r\n\t<td>/</td>"
+                    output += "<tr>\r\n\t<td>open</td>"
+                                       + "\r\n\t<td>" + url + "</td>"
                                        + "\r\n\t<td></td>"
-                                       + "\r\n</tr>";
+                                       + "\r\n</tr>\r\n";
 
-                    output += "\r\n<tr>\r\n\t<td>clickAndWait</td>"
-                                       + "\r\n\t<td>link=" + att.Value + "</td>"
+                    output += "<tr>\r\n\t<td>clickAndWait</td>"
+                                       + "\r\n\t<td>//a[contains(@href,'" + att.Value + "')]</td>"
                                        + "\r\n\t<td></td>"
                                        + "\r\n</tr>";
                 }

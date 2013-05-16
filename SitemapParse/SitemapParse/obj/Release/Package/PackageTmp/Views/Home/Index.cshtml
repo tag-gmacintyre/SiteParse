@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <label>SiteMap Parse</label>
+        </div>
+    </section>
+}
+<section>
+    <div class="content-wrapper">
+        @Html.ActionLink("Parse", "Parse", "URL")
+    </div>
+</section>
+
